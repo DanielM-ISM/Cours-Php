@@ -28,17 +28,30 @@ body {
     list-style: none;
     width: 100%;
     justify-content: center;
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .menu li {
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .menu li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    display: block; /* Rend chaque lien comme un bloc pour occuper toute la largeur */
+    padding: 10px;
+    background-color: #34495E; /* Couleur de fond pour les boutons */
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #1ABC9C; /* Couleur lors du survol */
 }
 
 .main-content {
@@ -136,34 +149,6 @@ th, td {
     margin: 0 auto 20px; /* Centre l'image et ajoute un espace en dessous */
     border: 3px solid #fff; /* Bordure blanche autour de l'image */
 }
-
-.menu {
-    list-style: none;
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    gap: 10px; /* Ajoute de l'espace entre chaque bouton */
-}
-
-.menu li {
-    width: 100%; /* Prend toute la largeur disponible */
-}
-
-.menu li a {
-    color: white;
-    font-size: 18px;
-    display: block; /* Rend chaque lien comme un bloc pour occuper toute la largeur */
-    padding: 10px;
-    background-color: #34495E; /* Couleur de fond pour les boutons */
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.menu li a:hover {
-    background-color: #1ABC9C; /* Couleur lors du survol */
-}
-
 .header-bar {
     background-color: #34495E; /* La même couleur que le menu latéral */
     padding: 15px;
@@ -239,50 +224,39 @@ th, td {
     margin-bottom: 15px;
 }
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Sidebar Styling */
-.sidebar {
-    width: 250px;
-    background-color: #2C3E50;
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    padding-top: 20px;
+/* Style du formulaire d'ajout de nouvel article */
+.new-article form {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
     align-items: center;
 }
 
-.menu button a {
-    text-decoration: none;
-    color: white;
+.new-article label {
+    font-weight: bold;
+}
+
+.new-article input[type="text"],
+.new-article input[type="number"] {
     padding: 10px;
-    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
 }
 
-/* Main Content Styling */
-.main-content {
-    margin-left: 250px;
-    padding: 20px;
-}
-
-.header-bar {
-    background-color: #34495E;
+.new-article button {
+    padding: 10px 20px;
+    background-color: #2f4a6d;
     color: white;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 20px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
+.new-article button:hover {
+    background-color: #4a658c;
+}
+
 
 .search-bar {
     width: 100%;
@@ -392,37 +366,3 @@ th, td {
 .inventory button:hover {
     background-color: #c9d8eb;
 }
-
-/* Style du formulaire d'ajout de nouvel article */
-.new-article form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    align-items: center;
-}
-
-.new-article label {
-    font-weight: bold;
-}
-
-.new-article input[type="text"],
-.new-article input[type="number"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 200px;
-}
-
-.new-article button {
-    padding: 10px 20px;
-    background-color: #2f4a6d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.new-article button:hover {
-    background-color: #4a658c;
-}
-
